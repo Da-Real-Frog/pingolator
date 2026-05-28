@@ -1,0 +1,8 @@
+services:
+  wifi-monitor:
+    build: .
+    container_name: wifi-monitor
+    restart: unless-stopped
+    # Using the host network ensures the container uses the exact 
+    # same routing and Wi-Fi interface as the Ubuntu server itself.
+    network_mode: "host"
